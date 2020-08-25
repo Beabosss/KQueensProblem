@@ -31,7 +31,7 @@ for (let i = 0; i < boardSize; i++){
 
 function setup() {
   boardSize = prompt("What would you like your Board Size to be?")
-  numQueens = pormpt("How many Queens would you like to have?")
+  numQueens = prompt("How many Queens would you like to have?")
   fr = prompt("What would you like your frame rate to be?")
   createCanvas(700, 700);
   setFrameRate(fr)
