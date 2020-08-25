@@ -2,7 +2,7 @@ boardSize = prompt("What would you like your Board Size to be?")
 numQueens = prompt("How many Queens would you like to have?")
 fr = prompt("What would you like your frame rate to be?")
 
-var showAttack = false
+showAttack = prompt("Would you like the attacks to be shown? ")
 
 
 
