@@ -2,8 +2,13 @@ boardSize = prompt("What would you like your Board Size to be?")
 numQueens = prompt("How many Queens would you like to have?")
 fr = prompt("What would you like your frame rate to be?")
 
-showAttack = prompt("Would you like the attacks to be shown? ")
+attack = prompt("Would you like the attacks to be shown? ")
 
+showAttack = false
+
+if (attack == 'yes'){
+  showAttack = true
+}
 
 
 var allStates = []
