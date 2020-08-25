@@ -1,8 +1,6 @@
-var boardSize = 0
-
-var fr = 0
-
-var numQueens = 0
+boardSize = prompt("What would you like your Board Size to be?")
+numQueens = prompt("How many Queens would you like to have?")
+fr = prompt("What would you like your frame rate to be?")
 
 var showAttack = false
 
@@ -15,24 +13,22 @@ var allAttacks = []
 
 console.log(boardSize)
 
-  
-for (let i = 0; i < boardSize; i++){ 
-    
+
+for (let i = 0; i < boardSize; i++) {
+
   let append = []
-  
-  for (let j = 0; j < boardSize; j++){
-      append.push('O')
-    }
-    
-    allAttacks.push(append)
-    
+
+  for (let j = 0; j < boardSize; j++) {
+    append.push('O')
   }
+
+  allAttacks.push(append)
+
+}
 
 
 function setup() {
-  boardSize = prompt("What would you like your Board Size to be?")
-  numQueens = prompt("How many Queens would you like to have?")
-  fr = prompt("What would you like your frame rate to be?")
+
   createCanvas(700, 700);
   setFrameRate(fr)
 
@@ -93,21 +89,19 @@ function drawChessBoard(boardLength) {
     for (let y = 0; y < boardLength; y++) {
       // console.log(curColor)
       // console.log(allAttacks)
-      
-      if (allAttacks[y][x] == 'X' && showAttack){
+
+      if (allAttacks[y][x] == 'X' && showAttack) {
         fill(color(255, 0, 0))
         noStroke()
         rect(drawEncode(x), drawEncode(y), 700 / boardSize, 700 / boardSize)
-      
-      }
-      
-      else{
 
-      fill(curColor)
-      noStroke()
-      rect(drawEncode(x), drawEncode(y), 700 / boardSize, 700 / boardSize)
-      
-    }
+      } else {
+
+        fill(curColor)
+        noStroke()
+        rect(drawEncode(x), drawEncode(y), 700 / boardSize, 700 / boardSize)
+
+      }
 
       if (curColor == 'white') {
         curColor = color(118, 150, 86)
@@ -143,13 +137,13 @@ function pretty_print(curAttack) {
 }
 
 function getQueenAttack(curAttack, queenPos) {
-  
+
   let notAtStart = true
-  
-  if (curAttack[queenPos[1]][queenPos[0]] == 'X'){
-    notAtStart = false 
+
+  if (curAttack[queenPos[1]][queenPos[0]] == 'X') {
+    notAtStart = false
   }
-  
+
 
 
   let rowLst = []
@@ -175,13 +169,13 @@ function getQueenAttack(curAttack, queenPos) {
     curAttack[queenPos[1] + i][queenPos[0] - i] = 'X'
   }
   // pretty_print(curAttack)
-  
-  if (notAtStart){
-  
+
+  if (notAtStart) {
+
     curAttack[queenPos[1]][queenPos[0]] = 'O'
-    
+
   }
-  
+
 
   return curAttack
 
@@ -324,19 +318,19 @@ function draw() {
 
 
 
-  
+
   allAttacks = []
-  
-  for (let i = 0; i < boardSize; i++){ 
-    
+
+  for (let i = 0; i < boardSize; i++) {
+
     let append = []
-  
-    for (let j = 0; j < boardSize; j++){
+
+    for (let j = 0; j < boardSize; j++) {
       append.push('O')
     }
-    
+
     allAttacks.push(append)
-    
+
   }
 
 
@@ -353,7 +347,7 @@ function draw() {
     curIter++
 
   }
-  
+
   drawChessBoard(boardSize)
 
 
